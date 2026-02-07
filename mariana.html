@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Mariana Mendoza - Fotografía profesional de eventos, bodas, 15 años y retratos familiares.">
+    <title>Mariana Mendoza | Fotografía</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #c5a059; /* Dorado elegante */
+            --bg: #f9f9f9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            background-color: var(--bg);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('1000333890.jpg'); /* Foto Boda caminando */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            background-color: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+            border-radius: 2px;
+        }
+
+        .btn:hover {
+            background-color: #a38346;
+        }
+
+        /* Services */
+        .services {
+            padding: 5rem 10%;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            margin: 10px auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            border: 1px solid #eee;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 5rem 5%;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Contact */
+        .contact {
+            background: var(--primary);
+            color: var(--white);
+            padding: 5rem 10%;
+            text-align: center;
+        }
+
+        .contact p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #111;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            nav { display: none; } /* Simplificado para demo */
+            .logo { display: block; margin: 0 auto; }
+            header { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Mariana <span>Mendoza</span></div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#portafolio">Portafolio</a></li>
+                <li><a href="https://www.instagram.com/marianaamendoza5?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Capturando Instantes Eternos</h1>
+            <p>Fotografía de Bodas, 15 Años y Eventos Familiares</p>
+            <a href="https://www.instagram.com/marianaamendoza5?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn">Reservar Fecha</a>
+        </div>
+    </section>
+
+    <section id="servicios" class="services">
+        <h2 class="section-title">Mis Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Bodas</h3>
+                <p>Documentando el inicio de su historia de amor con elegancia y emoción.</p>
+            </div>
+            <div class="service-card">
+                <h3>15 Años</h3>
+                <p>Sesiones modernas y cobertura completa de tu noche soñada.</p>
+            </div>
+            <div class="service-card">
+                <h3>Familia & Niños</h3>
+                <p>Desde bautismos hasta cumpleaños, guardamos los recuerdos de su crecimiento.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portafolio" class="gallery">
+        <div style="text-align: center;">
+            <h2 class="section-title">Portafolio Reciente</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="1.jpeg" alt="Quinceañera Sesión">
+                <div class="gallery-overlay"><h3>15 Años</h3><p>Sesión de Exteriores</p></div>
+            </div>
+            <div class="gallery-item">
+                <img src="2.jepg" alt="Quinceañera Fiesta">
+                <div class="gallery-overlay"><h3>15 Años</h3><p>Momentos en familia</p></div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="3.jepg" alt="Boda Entrada">
+                <div class="gallery-overlay"><h3>Bodas</h3><p>Entrada a la Iglesia</p></div>
+            </div>
+            <div class="gallery-item">
+                <img src="4.jepg" alt="Boda Ceremonia">
+                <div class="gallery-overlay"><h3>Bodas</h3><p>Ceremonia Religiosa</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="5.jepg" alt="Retrato Bebé">
+                <div class="gallery-overlay"><h3>Infantil</h3><p>Retratos Espontáneos</p></div>
+            </div>
+            <div class="gallery-item">
+                <img src="6.jepg" alt="Cumpleaños Infantil">
+                <div class="gallery-overlay"><h3>Cumpleaños</h3><p>Celebrando la vida</p></div>
+            </div>
+            <div class="gallery-item">
+                <img src="7.jepg" alt="Bautismo">
+                <div class="gallery-overlay"><h3>Bautismos</h3><p>Ceremonias Familiares</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="8.jepg" alt="Abrazos Emotivos">
+                <div class="gallery-overlay"><h3>Emociones</h3><p>Vínculos reales</p></div>
+            </div>
+            <div class="gallery-item">
+                <img src="9.jepg" alt="Detalles Decoración">
+                <div class="gallery-overlay"><h3>Detalles</h3><p>La magia está en lo pequeño</p></div>
+            </div>
+             <div class="gallery-item">
+                <img src="10.jepg" alt="Eventos Divertidos">
+                <div class="gallery-overlay"><h3>Eventos</h3><p>Diversión pura</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <h2 class="section-title" style="color: white; border-color: white;">Hablemos</h2>
+        <p>¿Tienes un evento especial en puerta? Me encantaría contar tu historia.</p>
+        <a href="https://www.instagram.com/marianaamendoza5?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn" style="background: white; color: var(--primary);">Enviar Email</a>
+        <br><br>
+        <p><small>O escríbeme por WhatsApp al +543755237222</small></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mariana Mendoza Fotografía. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
